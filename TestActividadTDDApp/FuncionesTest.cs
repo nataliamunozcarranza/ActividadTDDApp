@@ -16,5 +16,19 @@ namespace TestActividadTDDApp
             long resultado = Funciones.CalcularFactorial(n);
             Assert.AreEqual(esperado, resultado);
         }
+
+
+        [TestMethod]
+        [DataRow(null, false)]      
+        [DataRow("", false)]          
+        [DataRow("Ab#1234", false)]    
+        [DataRow("abcdefgh", false)]    
+        [DataRow("abcdefg#", true)]     
+        [DataRow("Clave#Segura1", true)]
+        public void EsContrasenyaValida_VariosCasos(string? contrasenya, bool esperado)
+        {
+            bool resultado = Funciones.EsContrasenyaValida(contrasenya);
+            Assert.AreEqual(esperado, resultado);
+        }
     }
 }
