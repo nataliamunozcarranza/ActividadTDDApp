@@ -6,16 +6,17 @@ namespace ActividadTDDApp
 {
     public class Funciones
     {
+        private const long VALOR_INVALIDO = -1;
         public static long CalcularFactorial(int n)
         {
             if (n < 0)
-                return -1;
+                return VALOR_INVALIDO;
 
-            long resultado = 1;
+            long factorial = 1;
             for (int i = 2; i <= n; i++)
-                resultado *= i;
+                factorial *= i;
 
-            return resultado;
+            return factorial;
         }
     }
 }
